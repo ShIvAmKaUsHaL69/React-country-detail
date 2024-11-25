@@ -1,13 +1,15 @@
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Header from "./components/Header";
 import Home from "./components/home";
+import Error from "./components/error";
+import CountryDetails from "./components/CountryDetails";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
+        errorElement: <Error />,
         children: [
             {
                 path: '/',
@@ -15,7 +17,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/country',
-                element: <div>country</div>,
+                element: <CountryDetails/>,
             },
         ],
     },
