@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Countriesdetailshimmer from './Countriesdetailshimmer';
 
 export default function CountryDetails() {
   const { country: countryName } = useParams();
@@ -54,7 +55,11 @@ export default function CountryDetails() {
   }
 
   if (!countryData) {
-    return <div>Loading...</div>;
+    return <main><div className="country-details-container">
+    <span className="back-button" onClick={() => window.history.back()}>
+      <i className="fa-solid fa-arrow-left"></i>&nbsp; Back
+    </span>
+    <Countriesdetailshimmer /></div></main>;
   }
 
   return (

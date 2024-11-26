@@ -1,4 +1,5 @@
 // import data from '../data'
+import Countrieslistshimmer from './Countrieslistshimmer'
 import Countrycard from './Countrycard'
 import React, { useEffect, useState } from 'react'
 
@@ -14,7 +15,7 @@ export default function Countriescontainer({query, filter}) {
   }, [])
   return (
     <>
-    <div className="countries-container">
+    {!data.length ? <Countrieslistshimmer /> : <div className="countries-container">
       {data.filter((country) => country.region.toLowerCase().includes(filter))
         .filter((country) =>
           country.name.common.toLowerCase().includes(query)
@@ -31,7 +32,7 @@ export default function Countriescontainer({query, filter}) {
             />
           )
         })}
-    </div>
+    </div>}
   </>
   )
 }
