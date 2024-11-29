@@ -1,6 +1,3 @@
 node_modules/
-.env
-build/
-.DS_Store
 .parcel-cache
 dist
